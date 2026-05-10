@@ -615,7 +615,7 @@ export default function LoginModal({ onClose, onSwitchToSignup, onSwitchToLogin 
     onSuccess: async (tokenResponse) => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:5000/api/auth/google", {
+        const res = await fetch("https://aifa-main.onrender.com/api/auth/google", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ token: tokenResponse.access_token }), 
@@ -644,7 +644,7 @@ export default function LoginModal({ onClose, onSwitchToSignup, onSwitchToLogin 
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("https://aifa-main.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: cleanEmail(email), password }),
@@ -673,7 +673,7 @@ export default function LoginModal({ onClose, onSwitchToSignup, onSwitchToLogin 
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/auth/forgot-password", {
+      const response = await fetch("https://aifa-main.onrender.com/api/auth/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: cleanEmail(email) }), // Fixed with normalization
@@ -701,7 +701,7 @@ export default function LoginModal({ onClose, onSwitchToSignup, onSwitchToLogin 
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/auth/reset-password", {
+      const response = await fetch("https://aifa-main.onrender.com/api/auth/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: cleanEmail(email), otp, newPassword }),
