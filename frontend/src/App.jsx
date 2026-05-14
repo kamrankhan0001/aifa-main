@@ -1,65 +1,159 @@
-// import React from "react";
-// import Navbar from "./Components/Navbar";
-// import Hero from "./Components/Hero";
-// import Companies from "./Components/Companies";
-// import CourseCard from "./Components/CourseCard";
-// import Courses from "./Components/Courses";
-// import Tools from "./Components/Tools";
-// import Bootcamps from "./Components/Bootcamp";
-// import Features from "./Components/Features";
-// import Directors from "./Components/Directors";
-// import Stats from "./Components/Stats";
-// import Testimonial from "./Components/Testimonial";
-// import CTASection from "./Components/CTASection";
-// import Footer from "./Components/Footer";
+// // import React from "react";
+// // import Navbar from "./Components/Navbar";
+// // import Hero from "./Components/Hero";
+// // import Companies from "./Components/Companies";
+// // import CourseCard from "./Components/CourseCard";
+// // import Courses from "./Components/Courses";
+// // import Tools from "./Components/Tools";
+// // import Bootcamps from "./Components/Bootcamp";
+// // import Features from "./Components/Features";
+// // import Directors from "./Components/Directors";
+// // import Stats from "./Components/Stats";
+// // import Testimonial from "./Components/Testimonial";
+// // import CTASection from "./Components/CTASection";
+// // import Footer from "./Components/Footer";
 
-// const App = () => {
-//   return (
-//     <div>
-//       <Navbar />
-//       <Hero />
-//       <Companies />
-//       <CourseCard />
-//       <Courses />
-//       <Tools />
-//       <Bootcamps />
-//       <Features />
-//       <Directors />
-//       <Stats />
-//       <Testimonial />
-//       <CTASection />
-//       <Footer/>
-//     </div>
-//   );
-// };
+// // const App = () => {
+// //   return (
+// //     <div>
+// //       <Navbar />
+// //       <Hero />
+// //       <Companies />
+// //       <CourseCard />
+// //       <Courses />
+// //       <Tools />
+// //       <Bootcamps />
+// //       <Features />
+// //       <Directors />
+// //       <Stats />
+// //       <Testimonial />
+// //       <CTASection />
+// //       <Footer/>
+// //     </div>
+// //   );
+// // };
 
-// export default App;
+// // export default App;
+
+// // "use client";
+
+// // import React, { useState } from "react";
+// // import Navbar from "./Components/Navbar";
+// // import Hero from "./Components/Hero";
+// // import Companies from "./Components/Companies";
+// // import CourseCard from "./Components/CourseCard";
+// // import Courses from "./Components/Courses";
+// // import Tools from "./Components/Tools";
+// // import Bootcamps from "./Components/Bootcamp";
+// // import Features from "./Components/Features";
+// // import Directors from "./Components/Directors";
+// // import Stats from "./Components/Stats";
+// // import Testimonial from "./Components/Testimonial";
+// // import CTASection from "./Components/CTASection";
+// // import Footer from "./Components/Footer";
+// // import LoginModal from "./authentication/LoginModal";
+// // import SignUpModal from "./authentication/SignUpModal";
+
+// // const App = () => {
+// //   const [showLogin, setShowLogin] = useState(false);
+// //   const [showSignup, setShowSignup] = useState(false);
+
+// //   return (
+// //     <div className="bg-[#0B0F10] min-h-screen">
+// //       <Navbar
+// //         onLoginClick={() => {
+// //           setShowSignup(false);
+// //           setShowLogin(true);
+// //         }}
+// //         onSignupClick={() => {
+// //           setShowLogin(false);
+// //           setShowSignup(true);
+// //         }}
+// //       />
+
+// //       <Hero />
+// //       <Companies />
+// //       <CourseCard />
+// //       <Courses />
+// //       <Tools />
+// //       <Bootcamps />
+// //       <Features />
+// //       <Directors />
+// //       <Stats />
+// //       <Testimonial />
+// //       <CTASection />
+// //       <Footer />
+
+// //       {/* LOGIN MODAL */}
+// //       {/* LOGIN MODAL */}
+// //       {showLogin && !showSignup && (
+// //         <LoginModal
+// //           onClose={() => setShowLogin(false)}
+// //           onSwitchToSignup={() => {
+// //             setShowLogin(false);
+// //             setShowSignup(true);
+// //           }}
+// //         />
+// //       )}
+
+// //       {/* SIGNUP MODAL */}
+// //       {showSignup && !showLogin && (
+// //         <SignUpModal
+// //           onClose={() => setShowSignup(false)}
+// //           onSwitchToLogin={() => {
+// //             setShowSignup(false);
+// //             setShowLogin(true);
+// //           }}
+// //         />
+// //       )}
+// //     </div>
+// //   );
+// // };
+
+// // export default App;
 
 // "use client";
 
-// import React, { useState } from "react";
+// import { useState } from "react";
+// import { Routes, Route } from "react-router-dom";
+
 // import Navbar from "./Components/Navbar";
-// import Hero from "./Components/Hero";
-// import Companies from "./Components/Companies";
-// import CourseCard from "./Components/CourseCard";
-// import Courses from "./Components/Courses";
-// import Tools from "./Components/Tools";
-// import Bootcamps from "./Components/Bootcamp";
-// import Features from "./Components/Features";
-// import Directors from "./Components/Directors";
-// import Stats from "./Components/Stats";
-// import Testimonial from "./Components/Testimonial";
-// import CTASection from "./Components/CTASection";
 // import Footer from "./Components/Footer";
+
+// import Home from "./pages/Home";
+// import CoursesPage from "./pages/CoursesPage";
+
 // import LoginModal from "./authentication/LoginModal";
 // import SignUpModal from "./authentication/SignUpModal";
 
-// const App = () => {
+// import HireTalent from "./pages/HireTalent";
+// import JobsSection from "./pages/JobsSection";
+// import PromptLibrary from "./pages/PromptLibrary";
+// import Workflow from "./pages/workflow";
+// import Projects from "./pages/Projects";
+// import LearningTips from "./pages/LearningTips";
+// import AiDeals from "./pages/AiDeals";
+// import ServicesPage from "./pages/ServicesPage";
+// import WorkshopsPage from "./pages/WorkshopsPage";
+// import Bootcamppage from "./pages/Bootcamppage";
+// import UserDashboard from "./userDashboardPage/UserDashboard";
+
+// export default function App() {
 //   const [showLogin, setShowLogin] = useState(false);
 //   const [showSignup, setShowSignup] = useState(false);
 
 //   return (
-//     <div className="bg-[#0B0F10] min-h-screen">
+//     <div
+//       className="
+//         w-full
+//         min-h-screen
+
+//         bg-[#0B0F10]
+
+//         overflow-x-hidden
+//       "
+//     >
+//       {/* NAVBAR */}
 //       <Navbar
 //         onLoginClick={() => {
 //           setShowSignup(false);
@@ -71,20 +165,37 @@
 //         }}
 //       />
 
-//       <Hero />
-//       <Companies />
-//       <CourseCard />
-//       <Courses />
-//       <Tools />
-//       <Bootcamps />
-//       <Features />
-//       <Directors />
-//       <Stats />
-//       <Testimonial />
-//       <CTASection />
+//       {/* MAIN CONTENT */}
+//       <main
+//         className="
+//           w-full
+
+//           pt-[72px]
+
+//           flex
+//           flex-col
+//         "
+//       >
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/courses" element={<CoursesPage />} />
+//           <Route path="/bootcamp" element={<Bootcamppage />} />
+//           <Route path="/hire-talent" element={<HireTalent />} />
+//           <Route path="/jobs" element={<JobsSection />} />
+//           <Route path="/prompt-library" element={<PromptLibrary />} />
+//           <Route path="/workflow" element={<Workflow />} />
+//           <Route path="/projects" element={<Projects />} />
+//           <Route path="/learning" element={<LearningTips />} />
+//           <Route path="/deals" element={<AiDeals />} />
+//           <Route path="/services" element={<ServicesPage />} />
+//           <Route path="/workshops" element={<WorkshopsPage />} />
+//           <Route path="/dashboard" element={<UserDashboard />} />
+//         </Routes>
+//       </main>
+
+//       {/* FOOTER */}
 //       <Footer />
 
-//       {/* LOGIN MODAL */}
 //       {/* LOGIN MODAL */}
 //       {showLogin && !showSignup && (
 //         <LoginModal
@@ -108,24 +219,21 @@
 //       )}
 //     </div>
 //   );
-// };
+// }
 
-// export default App;
+
 
 "use client";
 
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 import Home from "./pages/Home";
 import CoursesPage from "./pages/CoursesPage";
-
-import LoginModal from "./authentication/LoginModal";
-import SignUpModal from "./authentication/SignUpModal";
-
 import HireTalent from "./pages/HireTalent";
 import JobsSection from "./pages/JobsSection";
 import PromptLibrary from "./pages/PromptLibrary";
@@ -136,46 +244,39 @@ import AiDeals from "./pages/AiDeals";
 import ServicesPage from "./pages/ServicesPage";
 import WorkshopsPage from "./pages/WorkshopsPage";
 import Bootcamppage from "./pages/Bootcamppage";
+import UserDashboard from "./userDashboardPage/UserDashboard";
+
+import LoginModal from "./authentication/LoginModal";
+import SignUpModal from "./authentication/SignUpModal";
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
+  const location = useLocation();
+
+  // Dashboard paths ke liye check
+  const isDashboard = location.pathname.startsWith("/dashboard");
 
   return (
-    <div
-      className="
-        w-full
-        min-h-screen
-
-        bg-[#0B0F10]
-
-        overflow-x-hidden
-      "
-    >
-      {/* NAVBAR */}
-      <Navbar
-        onLoginClick={() => {
-          setShowSignup(false);
-          setShowLogin(true);
-        }}
-        onSignupClick={() => {
-          setShowLogin(false);
-          setShowSignup(true);
-        }}
-      />
+    <div className="w-full min-h-screen bg-[#0B0F10] overflow-x-hidden">
+      {/* NAVBAR: Dashboard par hide rahega */}
+      {!isDashboard && (
+        <Navbar
+          onLoginClick={() => {
+            setShowSignup(false);
+            setShowLogin(true);
+          }}
+          onSignupClick={() => {
+            setShowLogin(false);
+            setShowSignup(true);
+          }}
+        />
+      )}
 
       {/* MAIN CONTENT */}
-      <main
-        className="
-          w-full
-
-          pt-[72px]
-
-          flex
-          flex-col
-        "
-      >
+      <main className={`w-full flex flex-col ${!isDashboard ? "pt-[72px]" : ""}`}>
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/bootcamp" element={<Bootcamppage />} />
@@ -188,14 +289,24 @@ export default function App() {
           <Route path="/deals" element={<AiDeals />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/workshops" element={<WorkshopsPage />} />
+
+          {/* ✅ Protected Dashboard Route */}
+          <Route 
+            path="/dashboard" 
+            element={
+              <ProtectedRoute>
+                <UserDashboard />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
       </main>
 
-      {/* FOOTER */}
-      <Footer />
+      {/* FOOTER: Dashboard par hide rahega */}
+      {!isDashboard && <Footer />}
 
-      {/* LOGIN MODAL */}
-      {showLogin && !showSignup && (
+      {/* MODALS */}
+      {showLogin && (
         <LoginModal
           onClose={() => setShowLogin(false)}
           onSwitchToSignup={() => {
@@ -205,8 +316,7 @@ export default function App() {
         />
       )}
 
-      {/* SIGNUP MODAL */}
-      {showSignup && !showLogin && (
+      {showSignup && (
         <SignUpModal
           onClose={() => setShowSignup(false)}
           onSwitchToLogin={() => {

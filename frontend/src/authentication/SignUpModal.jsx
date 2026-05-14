@@ -275,7 +275,7 @@ export default function SignUpModal({ onClose, onSwitchToLogin }) {
                     </div>
                     <button 
                       onClick={handleNextStep} 
-                      className="w-full bg-[#C7E36B] hover:bg-[#d4ed83] text-black py-4 rounded-2xl font-bold transition-all transform active:scale-[0.98] mt-4"
+                      className="w-full bg-[#C7E36B] hover:bg-[#d4ed83] text-black py-4 rounded-2xl font-bold transition-all transform active:scale-[0.98] mt-4 cursor-pointer"
                     >
                       CONTINUE
                     </button>

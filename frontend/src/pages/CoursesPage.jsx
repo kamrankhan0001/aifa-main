@@ -1,5 +1,258 @@
 
 
+// "use client";
+
+// import { useState } from "react";
+// import ProPlanBanner from "./ProPlanBanner";
+
+// /* ---------------- COURSES DATA ---------------- */
+// const courses = [
+//   {
+//     title: "AI Reels & Shorts Masterclass",
+//     desc: "Create Engaging Short-Form Videos Using Smart AI Tools.",
+//     image: "/courses/v1.png",
+//     duration: "1h 10m",
+//   },
+//   {
+//     title: "AI Social Media Design Course",
+//     desc: "Design Scroll-Stopping Social Content With AI Creativity.",
+//     image: "/courses/v2.png",
+//     duration: "1h 10m",
+//   },
+//   {
+//     title: "AI Thumbnail Creation Masterclass",
+//     desc: "Design High-Converting Thumbnails Using AI-Powered Tools.",
+//     image: "/courses/v3.png",
+//     duration: "1h 10m",
+//   },
+//   {
+//     title: "AI Video Editing Masterclass",
+//     desc: "Master cinematic editing using AI tools and workflows.",
+//     image: "/courses/v4.png",
+//     duration: "2h 00m",
+//   },
+//   {
+//     title: "AI Content Creation Bootcamp",
+//     desc: "Build high-quality content using AI automation tools.",
+//     image: "/courses/v5.png",
+//     duration: "1h 30m",
+//   },
+//   {
+//     title: "AI Cinematic Storytelling",
+//     desc: "Learn storytelling techniques with AI filmmaking.",
+//     image: "/courses/v6.png",
+//     duration: "2h 15m",
+//   },
+//   {
+//     title: "AI Scriptwriting Masterclass",
+//     desc: "Craft compelling scripts using AI writing tools.",
+//     image: "/courses/v7.png",
+//     duration: "1h 45m",
+//   },
+//   {
+//     title: "AI Visual Effects Course",
+//     desc: "Create stunning VFX using AI-powered software.",
+//     image: "/courses/v8.png",
+//     duration: "2h 30m",
+//   },
+//   {
+//     title: "AI Sound Design Masterclass",
+//     desc: "Design immersive soundscapes with AI audio tools.",
+//     image: "/courses/v9.png",
+//     duration: "1h 20m",
+//   },
+//   {
+//     title: "AI Color Grading Course",
+//     desc: "Master color grading techniques using AI software.",
+//     image: "/courses/v10.png",
+//     duration: "1h 50m",
+//   },
+//   {
+//     title: "AI Motion Graphics Masterclass",
+//     desc: "Create dynamic motion graphics using AI-powered tools.",
+//     image: "/courses/v11.png",
+//     duration: "2h 00m",
+//   },
+//   {
+//     title: "AI Video Optimization Course",
+//     desc: "Optimize videos for performance using AI analytics.",
+//     image: "/courses/v12.png",
+//     duration: "1h 30m",
+//   },
+//   {
+//     title: "AI Content Strategy Masterclass",
+//     desc: "Develop effective content strategies using AI insights.",
+//     image: "/courses/v13.png",
+//     duration: "1h 40m",
+//   },
+//   {
+//     title: "AI Audience Engagement Course",
+//     desc: "Boost audience engagement using AI-driven techniques.",
+//     image: "/courses/v14.png",
+//     duration: "1h 25m",
+//   },
+//   {
+//     title: "AI Marketing Automation Course",
+//     desc: "Automate your marketing efforts using AI-powered tools.",
+//     image: "/courses/v15.png",
+//     duration: "1h 35m",
+//   },
+//   {
+//     title: "AI Analytics & Insights Masterclass",
+//     desc: "Leverage AI analytics to gain insights and optimize content.",
+//     image: "/courses/v16.png",
+//     duration: "1h 45m",
+//   },
+//   {
+//     title: "AI Content Monetization Course",
+//     desc: "Learn how to monetize your content using AI strategies.",
+//     image: "/courses/v17.png",
+//     duration: "1h 30m",
+//   },
+//   {
+//     title: "AI Content Monetization Course",
+//     desc: "Learn how to monetize your content using AI strategies.",
+//     image: "/courses/v10.png",
+//     duration: "1h 30m",
+//   },
+// ];
+
+
+// /* ---------------- MAIN PAGE ---------------- */
+// export default function CoursesPage() {
+//   const [search, setSearch] = useState("");
+//   const [open, setOpen] = useState(false);
+//   const [selected, setSelected] = useState("Newest");
+
+//   const options = ["Newest", "Price: Low to High", "Duration"];
+
+//   /* 🔍 FILTER */
+//   const filteredCourses = courses.filter((c) =>
+//     c.title.toLowerCase().includes(search.toLowerCase())
+//   );
+
+//   /* 🔽 SORT */
+//   const sortedCourses = [...filteredCourses].sort((a, b) => {
+//     if (selected === "Duration") {
+//       return a.duration.localeCompare(b.duration);
+//     }
+//     return 0;
+//   });
+
+//   return (
+//     <section className="min-h-screen bg-[#0B0F10] py-28">
+//       <div className="max-w-7xl mx-auto px-6">
+
+//         {/* 🔥 SEARCH + SORT */}
+//         <div className="flex flex-col md:flex-row gap-6 justify-between items-center mb-12">
+
+//           {/* SEARCH */}
+//           <div className="w-full md:w-[60%] relative">
+//             <input
+//               value={search}
+//               onChange={(e) => setSearch(e.target.value)}
+//               type="text"
+//               placeholder="Search Videos"
+//               className="w-full bg-transparent border border-white/20 rounded-xl px-12 py-3 text-white placeholder-gray-500 outline-none focus:border-white"
+//             />
+//             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+//               <img src="/Searchicon.svg" alt="" />
+//             </span>
+//           </div>
+
+//           {/* SORT */}
+//           <div className="relative w-full md:w-[260px]">
+//             <button
+//               onClick={() => setOpen(!open)}
+//               className="w-full flex justify-between items-center border border-white/20 px-4 py-3 rounded-xl text-white hover:bg-white/5"
+//             >
+//               Sort By: {selected}
+//               <span className={`${open ? "rotate-180" : ""}`}> <img src="/Vectorup.svg" alt="" />
+//               </span>
+//             </button>
+
+//             {open && (
+//               <div className="absolute top-full mt-2 w-full bg-[#1a1f22] border border-white/10 rounded-xl overflow-hidden z-50">
+//                 <div className="px-4 py-3 text-gray-400 text-sm border-b border-white/10">
+//                   Sort by
+//                 </div>
+
+//                 {options.map((item, i) => (
+//                   <div
+//                     key={i}
+//                     onClick={() => {
+//                       setSelected(item);
+//                       setOpen(false);
+//                     }}
+//                     className={`px-4 py-3 cursor-pointer text-sm ${
+//                       selected === item
+//                         ? "bg-white/10 text-white"
+//                         : "text-gray-300 hover:bg-white/5"
+//                     }`}
+//                   >
+//                     {item}
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//           </div>
+//         </div>
+
+//         {/* 🔥 GRID */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+//           {sortedCourses.map((course, i) => (
+//             <div
+//               key={i}
+//               className="bg-[#0f1416] border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] hover:border-white/20 transition"
+//             >
+//               {/* IMAGE */}
+//               <div className="relative">
+//                 <img
+//                   src={course.image}
+//                   alt={course.title}
+//                   className="w-full h-56 object-cover"
+//                 />
+
+//                 <span className="absolute top-3 left-3 bg-black/80 text-white text-xs px-3 py-1 rounded-md">
+//                   {course.duration}
+//                 </span>
+//               </div>
+
+//               {/* CONTENT */}
+//               <div className="p-5">
+//                 <h3 className="text-white text-lg font-semibold mb-2">
+//                   {course.title}
+//                 </h3>
+
+//                 <p className="text-gray-400 text-sm mb-4">
+//                   {course.desc}
+//                 </p>
+
+//                 <div className="flex gap-3 text-sm mb-4">
+//                   <span className="text-[#C7E36B] font-semibold">
+//                     95% off
+//                   </span>
+//                   <span className="line-through text-gray-500">
+//                     ₹799
+//                   </span>
+//                 </div>
+
+//                 <button className="w-full bg-[#dcdcdc] text-black py-2.5 rounded-md font-medium hover:bg-white">
+//                   Buy ₹49.00
+//                 </button>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* 🔥 BANNER */}
+//       <ProPlanBanner />
+//     </section>
+//   );
+// }
+
+
 "use client";
 
 import { useState } from "react";
@@ -9,114 +262,59 @@ import ProPlanBanner from "./ProPlanBanner";
 const courses = [
   {
     title: "AI Reels & Shorts Masterclass",
-    desc: "Create Engaging Short-Form Videos Using Smart AI Tools.",
+    desc: "Master AI-powered tools to write engaging and impactful scripts.",
     image: "/courses/v1.png",
     duration: "1h 10m",
   },
   {
     title: "AI Social Media Design Course",
-    desc: "Design Scroll-Stopping Social Content With AI Creativity.",
+    desc: "Transform still images into dynamic visuals using AI tools.",
     image: "/courses/v2.png",
     duration: "1h 10m",
   },
   {
     title: "AI Thumbnail Creation Masterclass",
-    desc: "Design High-Converting Thumbnails Using AI-Powered Tools.",
+    desc: "Create realistic AI avatars with advanced editing techniques.",
     image: "/courses/v3.png",
     duration: "1h 10m",
   },
   {
     title: "AI Video Editing Masterclass",
-    desc: "Master cinematic editing using AI tools and workflows.",
+    desc: "Design stunning virtual fashion models using AI technology.",
     image: "/courses/v4.png",
     duration: "2h 00m",
   },
   {
     title: "AI Content Creation Bootcamp",
-    desc: "Build high-quality content using AI automation tools.",
+    desc: "Restore and enhance colors in photos with AI precision.",
     image: "/courses/v5.png",
     duration: "1h 30m",
   },
   {
     title: "AI Cinematic Storytelling",
-    desc: "Learn storytelling techniques with AI filmmaking.",
+    desc: "Enhance facial details and clarity using powerful AI tools.",
     image: "/courses/v6.png",
     duration: "2h 15m",
   },
   {
     title: "AI Scriptwriting Masterclass",
-    desc: "Craft compelling scripts using AI writing tools.",
+    desc: "Build intelligent workflows and automate tasks using AI tools.",
     image: "/courses/v7.png",
     duration: "1h 45m",
   },
   {
     title: "AI Visual Effects Course",
-    desc: "Create stunning VFX using AI-powered software.",
+    desc: "Create stunning AI-generated videos with cinematic precision.",
     image: "/courses/v8.png",
     duration: "2h 30m",
   },
   {
     title: "AI Sound Design Masterclass",
-    desc: "Design immersive soundscapes with AI audio tools.",
+    desc: "Generate immersive backgrounds and scenes using AI tools.",
     image: "/courses/v9.png",
     duration: "1h 20m",
   },
-  {
-    title: "AI Color Grading Course",
-    desc: "Master color grading techniques using AI software.",
-    image: "/courses/v10.png",
-    duration: "1h 50m",
-  },
-  {
-    title: "AI Motion Graphics Masterclass",
-    desc: "Create dynamic motion graphics using AI-powered tools.",
-    image: "/courses/v11.png",
-    duration: "2h 00m",
-  },
-  {
-    title: "AI Video Optimization Course",
-    desc: "Optimize videos for performance using AI analytics.",
-    image: "/courses/v12.png",
-    duration: "1h 30m",
-  },
-  {
-    title: "AI Content Strategy Masterclass",
-    desc: "Develop effective content strategies using AI insights.",
-    image: "/courses/v13.png",
-    duration: "1h 40m",
-  },
-  {
-    title: "AI Audience Engagement Course",
-    desc: "Boost audience engagement using AI-driven techniques.",
-    image: "/courses/v14.png",
-    duration: "1h 25m",
-  },
-  {
-    title: "AI Marketing Automation Course",
-    desc: "Automate your marketing efforts using AI-powered tools.",
-    image: "/courses/v15.png",
-    duration: "1h 35m",
-  },
-  {
-    title: "AI Analytics & Insights Masterclass",
-    desc: "Leverage AI analytics to gain insights and optimize content.",
-    image: "/courses/v16.png",
-    duration: "1h 45m",
-  },
-  {
-    title: "AI Content Monetization Course",
-    desc: "Learn how to monetize your content using AI strategies.",
-    image: "/courses/v17.png",
-    duration: "1h 30m",
-  },
-  {
-    title: "AI Content Monetization Course",
-    desc: "Learn how to monetize your content using AI strategies.",
-    image: "/courses/v10.png",
-    duration: "1h 30m",
-  },
 ];
-
 
 /* ---------------- MAIN PAGE ---------------- */
 export default function CoursesPage() {
@@ -126,12 +324,12 @@ export default function CoursesPage() {
 
   const options = ["Newest", "Price: Low to High", "Duration"];
 
-  /* 🔍 FILTER */
+  /* FILTER */
   const filteredCourses = courses.filter((c) =>
-    c.title.toLowerCase().includes(search.toLowerCase())
+    c.title.toLowerCase().includes(search.toLowerCase()),
   );
 
-  /* 🔽 SORT */
+  /* SORT */
   const sortedCourses = [...filteredCourses].sort((a, b) => {
     if (selected === "Duration") {
       return a.duration.localeCompare(b.duration);
@@ -140,114 +338,441 @@ export default function CoursesPage() {
   });
 
   return (
-    <section className="min-h-screen bg-[#0B0F10] py-28">
-      <div className="max-w-7xl mx-auto px-6">
+    <>
+      <section
+        className="
+          w-full
+          bg-[#0F1112]
 
-        {/* 🔥 SEARCH + SORT */}
-        <div className="flex flex-col md:flex-row gap-6 justify-between items-center mb-12">
+          flex
+          justify-center
+        "
+      >
+        {/* FIGMA CONTAINER */}
+        <div
+          className="
+            w-full
+            max-w-[1366px]
 
-          {/* SEARCH */}
-          <div className="w-full md:w-[60%] relative">
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              type="text"
-              placeholder="Search Videos"
-              className="w-full bg-transparent border border-white/20 rounded-xl px-12 py-3 text-white placeholder-gray-500 outline-none focus:border-white"
-            />
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-              <img src="/Searchicon.svg" alt="" />
-            </span>
-          </div>
+            flex
+            flex-col
 
-          {/* SORT */}
-          <div className="relative w-full md:w-[260px]">
-            <button
-              onClick={() => setOpen(!open)}
-              className="w-full flex justify-between items-center border border-white/20 px-4 py-3 rounded-xl text-white hover:bg-white/5"
-            >
-              Sort By: {selected}
-              <span className={`${open ? "rotate-180" : ""}`}> <img src="/Vectorup.svg" alt="" />
-              </span>
-            </button>
+            items-center
 
-            {open && (
-              <div className="absolute top-full mt-2 w-full bg-[#1a1f22] border border-white/10 rounded-xl overflow-hidden z-50">
-                <div className="px-4 py-3 text-gray-400 text-sm border-b border-white/10">
-                  Sort by
-                </div>
+            gap-[11px]
 
-                {options.map((item, i) => (
-                  <div
-                    key={i}
-                    onClick={() => {
-                      setSelected(item);
-                      setOpen(false);
-                    }}
-                    className={`px-4 py-3 cursor-pointer text-sm ${
-                      selected === item
-                        ? "bg-white/10 text-white"
-                        : "text-gray-300 hover:bg-white/5"
-                    }`}
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
+            px-[93px]
+            py-[64px]
 
-        {/* 🔥 GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {sortedCourses.map((course, i) => (
+            bg-[#0F1112]
+
+            max-sm:px-[16px]
+            max-sm:py-[40px]
+          "
+        >
+          {/* INNER */}
+          <div
+            className="
+              w-full
+              max-w-[1180px]
+            "
+          >
+            {/* SEARCH + SORT */}
             <div
-              key={i}
-              className="bg-[#0f1416] border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] hover:border-white/20 transition"
+              className="
+                flex
+                flex-col
+                md:flex-row
+
+                justify-between
+                items-center
+
+                gap-6
+
+                mb-12
+
+                max-sm:items-stretch
+                max-sm:mb-8
+              "
             >
-              {/* IMAGE */}
-              <div className="relative">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-56 object-cover"
+              {/* SEARCH */}
+              <div className="w-full md:w-[60%] relative">
+                <input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  type="text"
+                  placeholder="Search Videos"
+                  className="
+                    w-full
+
+                    bg-transparent
+
+                    border
+                    border-[#414243]
+
+                    rounded-[12px]
+
+                    px-12
+                    py-3
+
+                    text-white
+
+                    placeholder-gray-500
+
+                    outline-none
+
+                    focus:border-white
+                  "
                 />
 
-                <span className="absolute top-3 left-3 bg-black/80 text-white text-xs px-3 py-1 rounded-md">
-                  {course.duration}
+                <span
+                  className="
+                    absolute
+                    left-4
+                    top-1/2
+
+                    -translate-y-1/2
+                  "
+                >
+                  <img
+                    src="/Searchicon.svg"
+                    alt="search"
+                    className="w-[18px] h-[18px]"
+                  />
                 </span>
               </div>
 
-              {/* CONTENT */}
-              <div className="p-5">
-                <h3 className="text-white text-lg font-semibold mb-2">
-                  {course.title}
-                </h3>
+              {/* SORT */}
+              <div className="relative w-full md:w-[260px]">
+                <button
+                  onClick={() => setOpen(!open)}
+                  className="
+                    w-full
 
-                <p className="text-gray-400 text-sm mb-4">
-                  {course.desc}
-                </p>
+                    flex
+                    justify-between
+                    items-center
 
-                <div className="flex gap-3 text-sm mb-4">
-                  <span className="text-[#C7E36B] font-semibold">
-                    95% off
+                    border
+                    border-[#414243]
+
+                    px-4
+                    py-3
+
+                    rounded-[12px]
+
+                    text-white
+
+                    transition-all
+                    duration-300
+
+                    hover:bg-white/5
+                  "
+                >
+                  <span>Sort By: {selected}</span>
+
+                  <span
+                    className={`
+                      transition-all
+                      duration-300
+                      ${open ? "rotate-180" : ""}
+                    `}
+                  >
+                    <img src="/Vectorup.svg" alt="arrow" className="w-[14px]" />
                   </span>
-                  <span className="line-through text-gray-500">
-                    ₹799
-                  </span>
-                </div>
-
-                <button className="w-full bg-[#dcdcdc] text-black py-2.5 rounded-md font-medium hover:bg-white">
-                  Buy ₹49.00
                 </button>
+
+                {open && (
+                  <div
+                    className="
+                      absolute
+                      top-full
+
+                      mt-2
+
+                      w-full
+
+                      bg-[#1A1F22]
+
+                      border
+                      border-[#414243]
+
+                      rounded-[12px]
+
+                      overflow-hidden
+
+                      z-50
+                    "
+                  >
+                    <div
+                      className="
+                        px-4
+                        py-3
+
+                        text-gray-400
+                        text-sm
+
+                        border-b
+                        border-[#414243]
+                      "
+                    >
+                      Sort by
+                    </div>
+
+                    {options.map((item, i) => (
+                      <div
+                        key={i}
+                        onClick={() => {
+                          setSelected(item);
+                          setOpen(false);
+                        }}
+                        className={`
+                          px-4
+                          py-3
+
+                          cursor-pointer
+
+                          text-sm
+
+                          transition-all
+                          duration-300
+
+                          ${
+                            selected === item
+                              ? "bg-white/10 text-white"
+                              : "text-gray-300 hover:bg-white/5"
+                          }
+                        `}
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* 🔥 BANNER */}
+            {/* GRID */}
+            <div
+              className="
+                grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+
+                gap-[20px]
+
+                w-full
+
+                max-sm:gap-[16px]
+              "
+            >
+              {sortedCourses.map((course, i) => (
+                <div
+                  key={i}
+                  className="
+                    flex
+                    flex-col
+
+                    items-start
+                    justify-between
+
+                    w-full
+                    max-w-[386px]
+
+                    min-h-[477px]
+
+                    rounded-[8px]
+
+                    border
+                    border-[#414243]
+
+                    bg-[#0F1112]
+
+                    overflow-hidden
+
+                    transition-all
+                    duration-300
+
+                    hover:border-[#5A5B5C]
+                    hover:translate-y-[-4px]
+
+                    max-sm:max-w-full
+                  "
+                >
+                  {/* IMAGE */}
+                  <div className="relative w-full">
+                    <img
+                      src={course.image}
+                      alt={course.title}
+                      className="
+                        w-full
+                        h-[240px]
+
+                        object-cover
+                      "
+                    />
+
+                    {/* DURATION */}
+                    <span
+                      className="
+                        absolute
+                        top-[14px]
+                        left-[14px]
+
+                        bg-black/80
+
+                        text-white
+
+                        text-[12px]
+                        font-medium
+
+                        px-[10px]
+                        py-[6px]
+
+                        rounded-[6px]
+                      "
+                    >
+                      {course.duration}
+                    </span>
+                  </div>
+
+                  {/* CONTENT */}
+                  <div
+                    className="
+                      flex
+                      flex-col
+
+                      items-start
+
+                      gap-[16px]
+
+                      w-full
+
+                      p-[24px]
+
+                      flex-1
+
+                      max-sm:p-[18px]
+                    "
+                  >
+                    {/* TITLE */}
+                    <h3
+                      className="
+    text-[#F0F0F0]
+
+    font-[Montserrat]
+    text-[18px]
+    font-semibold
+    leading-[28px]
+
+    max-sm:text-[16px]
+    max-sm:leading-[24px]
+  "
+                    >
+                      {course.title}
+                    </h3>
+
+                    {/* DESCRIPTION */}
+                    <p
+                      className="
+    self-stretch
+    max-h-[48px]
+
+    text-[#767779]
+
+    font-[Montserrat]
+    text-[16px]
+    font-normal
+    leading-[24px]
+
+    [font-feature-settings:'case'_on]
+
+    overflow-hidden
+  "
+                    >
+                      {course.desc}
+                    </p>
+                    {/* PRICE */}
+                   <div
+  className="
+    flex
+    items-center
+    gap-[8px]
+    self-stretch
+    mt-auto
+  "
+>
+  <span
+    className="
+      text-[#C7E36B]
+
+      font-[Montserrat]
+      text-[14px]
+      font-semibold
+      leading-[22px]
+    "
+  >
+    95% off
+  </span>
+
+  <span
+    className="
+      line-through
+
+      text-[#6F6F6F]
+
+      font-[Montserrat]
+      text-[14px]
+      font-normal
+      leading-[22px]
+    "
+  >
+    ₹799
+  </span>
+</div>
+                    {/* BUTTON */}
+                    <button
+                      className="
+    flex
+    justify-center
+    items-center
+
+    gap-[8px]
+
+    self-stretch
+
+    px-[16px]
+    py-[8px]
+
+    rounded-[4px]
+
+    bg-[#F0F0F0]
+
+    text-black
+
+    text-[14px]
+    font-semibold
+    leading-[24px]
+
+    transition-all
+    duration-300
+
+    hover:bg-white
+  "
+                    >
+                      BUY ₹399.00
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BANNER */}
       <ProPlanBanner />
-    </section>
+    </>
   );
 }
